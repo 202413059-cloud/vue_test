@@ -1,40 +1,44 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    /* ECMAScript & 모듈 설정 */
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+
+    /* 엄격 모드 및 편의 옵션 */
     "strict": true,
-    "jsx": "preserve",
-    "moduleResolution": "node",
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "useDefineForClassFields": true,
-    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    /* Vue 타입 지원 */
+    "types": ["vue"],
+    "jsx": "preserve",
+
+    /* 경로 별칭 */
     "baseUrl": ".",
-    "types": [
-      "webpack-env"
-    ],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
+
+    /* 디버깅 */
+    "sourceMap": true,
+
+    /* 브라우저 환경 */
+    "lib": ["ESNext", "DOM", "DOM.Iterable"]
   },
   "include": [
+    "env.d.ts",
     "src/**/*.ts",
+    "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
